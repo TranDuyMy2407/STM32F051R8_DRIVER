@@ -1,0 +1,4 @@
+"Startup/startup_stm32f051r8tx.o"
+"driver/src/USART_api.o"
+"driver/src/gpio_api.o"
+"user/main.o"

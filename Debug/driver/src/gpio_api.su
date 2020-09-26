@@ -1,0 +1,6 @@
+gpio_api.c:12:6:GPIO_clk_control	24	static
+gpio_api.c:61:6:GPIO_init	32	static
+gpio_api.c:163:9:GPIO_read_pin	16	static
+gpio_api.c:169:6:GPIO_write_pin	16	static
+gpio_api.c:182:6:GPIO_toggle	16	static
+gpio_api.c:188:6:GPIO_IRQ_config	24	static
