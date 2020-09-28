@@ -1,6 +1,7 @@
 #include "gpio_api.h"
 #include "USART_api.h"
 #include <string.h>
+#include "clock_api.h"
 #include<stdlib.h>
 
 char tx_buffer[] = "hello world";
@@ -14,6 +15,8 @@ USART_handle *pUSART;
 
 
 int main(void) {
+
+	PLL_clk(PLLMUL_4);
 	memset(rx_buffer,0,sizeof(rx_buffer));
 
 	LED = (GPIO_handle*)(malloc(sizeof(GPIO_handle)));
@@ -56,7 +59,7 @@ int main(void) {
 	pUSART->base_addr = USART1;
 	pUSART->config.USART_mode = USART_TX_RX;
 	pUSART->config.USART_oversampling= USART_OVERSAMPLING_16;
-	pUSART->config.USART_baudrate = USART_BAUD_9600;
+	pUSART->config.USART_baudrate = 0x682;
 	pUSART->config.USART_parity = DISABLE;
 	pUSART->config.USART_word_len = USART_DATA_BIT_8;
 	pUSART->config.USART_stop = USART_STOP_1;

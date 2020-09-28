@@ -38,6 +38,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 my_driver.list \
 
+OBJCOPY_HEX += \
+my_driver.hex \
+
 OBJCOPY_BIN += \
 my_driver.bin \
 
@@ -61,6 +64,11 @@ my_driver.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+my_driver.hex: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "my_driver.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 my_driver.bin: $(EXECUTABLES)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "my_driver.bin"
 	@echo 'Finished building: $@'
@@ -71,7 +79,7 @@ clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 .PHONY: all clean dependents
 .SECONDARY:

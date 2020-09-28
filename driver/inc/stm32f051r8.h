@@ -172,6 +172,22 @@
 #define NVIC_ICPR			(uint32_t*)0XE000E280
 #define NVIC_IPR			(uint32_t*)0xE000E400
 
+/*===================================END_CORE==================================== */
+
+/*===================================PLL==================================== */
+
+#define PLLMUL_2			0
+#define PLLMUL_3			1
+#define PLLMUL_4			2
+#define PLLMUL_5			3
+#define PLLMUL_6			4
+#define PLLMUL_7			5
+#define PLLMUL_8			6
+#define PLLMUL_9			7
+#define PLLMUL_10			8
+#define PLLMUL_11			9
+#define PLLMUL_12			10
+
 
 
 #endif /* INC_BASE_ADDR_H_ */
